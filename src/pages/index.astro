@@ -1,8 +1,12 @@
 ---
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import Home from '../components/Home.astro';
-import Welcome from '../components/Welcome.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skils.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import Education from '../components/Education.astro';
+
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -11,6 +15,11 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<Navbar />
-	<Home />
+	<Hero />
+	<Education />
+	<Skills />
+	<Projects />
+	<Contact />
+	
 	<Footer />
 </Layout>
