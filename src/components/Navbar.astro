@@ -1,31 +1,31 @@
 ---
-import { FaHome, FaUserAlt, FaTools, FaProjectDiagram, FaEnvelope } from 'react-icons/fa';
+// Navbar.astro
+import { DiGithubBadge } from 'react-icons/di';
+import { IoLogoLinkedin } from 'react-icons/io';
 
 ---
-<nav class="bg-primary text-white p-4 sticky top-0 z-50 shadow-md">
+
+<nav class="sticky top-0 bg-gray-800 text-white p-4 z-10">
   <div class="container mx-auto flex justify-between items-center">
-    <h1 class="font-bold text-2xl">Portfolio</h1>
-    <ul class="flex space-x-6 text-lg">
-      <li class="flex items-center space-x-1">
-        <FaHome />
-        <a href="#hero" class="hover:text-secondary">Home</a>
-      </li>
-      <li class="flex items-center space-x-1">
-        <FaUserAlt />
-        <a href="#education" class="hover:text-secondary">Education</a>
-      </li>
-      <li class="flex items-center space-x-1">
-        <FaTools />
-        <a href="#skills" class="hover:text-secondary">Skills</a>
-      </li>
-      <li class="flex items-center space-x-1">
-        <FaProjectDiagram />
-        <a href="#projects" class="hover:text-secondary">Projects</a>
-      </li>
-      <li class="flex items-center space-x-1">
-        <FaEnvelope />
-        <a href="#contact" class="hover:text-secondary">Contact</a>
-      </li>
-    </ul>
+    <div class="flex items-center space-x-4">
+      <h2 class="text-2xl font-semibold">Pramananda Sarkar</h2>
+      <div class="flex space-x-6">
+        <a href="https://github.com/yourusername" target="_blank" class="text-white hover:text-teal-400">
+          <DiGithubBadge size={24} />
+        </a>
+        <a href="https://www.linkedin.com/in/yourlinkedin" target="_blank" class="text-white hover:text-teal-400">
+          <IoLogoLinkedin size={24} />
+        </a>
+      </div>
+    </div>
+    <div>
+      <ul class="flex space-x-8">
+        <li><a href="#home" class="hover:text-teal-400">Home</a></li>
+        <li><a href="#projects" class="hover:text-teal-400">Projects</a></li>
+        <li><a href="#skills" class="hover:text-teal-400">Skills</a></li>
+        <li><a href="#education" class="hover:text-teal-400">Education</a></li>
+        <li><a href="#contact" class="hover:text-teal-400">Contact</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
