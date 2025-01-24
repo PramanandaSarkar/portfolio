@@ -14,41 +14,51 @@ const ml_projects = [
         link: "https://example.com/project2",
         tools: ["TensorFlow", "PyTorch", "Keras"],
     },
-    // Add more projects as needed
+    
 ];
 
 const web_projects = [
     {
-        title: "Project 1",
-        description: "This is a description of project 1.",
-        image: "https://via.placeholder.com/300x200",
-        link: "https://example.com/project1",
-        tools: ["React", "Node.js", "MongoDB"],
+        title: "Insurance App",
+        description: "Fully Software System Controlled Functional Insurance App",
+        image: "processing.png",
+        link: "https://github.com/PramanandaSarkar/insurance_app.git",
+        tools: ["express", "node", "react", "postgresql"],
+        status: "In Progress",
     },
     {
-        title: "Project 2",
-        description: "This is a description of project 2.",
-        image: "https://via.placeholder.com/300x200",
-        link: "https://example.com/project2",
-        tools: ["Next.js", "Express", "PostgreSQL"],
+        title: "Portfolio Website",
+        description: "Built my personal portfolio website",
+        image: "portfolio.png",
+        link: "https://github.com/PramanandaSarkar/portfolio-website",
+        tools: ["Astro","React", "Tailwind CSS"],
     },
-    // Add more projects as needed
+    {
+        title: "Movie App",
+        description: "Simple Movie Searching App by External API Integration",
+        image: "movie-app.png",
+        link: "https://github.com/PramanandaSarkar/movie-app",
+        tools: ["React", "Tailwind CSS", "TMDB API"],
+    },
+    
 ];
 
 const other_projects = [
     {
-        title: "Project 1",
-        description: "This is a description of project 1.",
-        image: "https://via.placeholder.com/300x200",
-        link: "https://example.com/project1",
-        tools: ["Django", "Flask", "FastAPI"],
+        title: "Multiplayer MultiServer Game Server",
+        description: "Scalable Game Server for Multiplayer Game",
+        image: "processing.png",
+        link: "https://github.com/PramanandaSarkar/match_making_service.git",
+        tools: ["FastAPI", "Websockets", "SQLite"],
+        status: "In Progress",
     },
     {
-        title: "Project 2",
-        description: "This is a description of project 2.",
-        image: "https://via.placeholder.com/300x200",
-        link: "https://example.com/project2",
-        tools: ["Vue.js", "Nuxt.js", "Tailwind CSS"],
+        title: "Word Dictionary",
+        description: "Building constant time Maximum word dictornary in C",
+        image: "processing.png",
+        link: "https://github.com/PramanandaSarkar/Word-Dictornary",
+        tools: ["C"],
+        status: "In Planning",
     },
     // Add more projects as needed
 ];
@@ -60,12 +70,71 @@ const other_projects = [
             Projects
         </h2>
 
+        
+
+        <!-- Web Projects -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold text-gray-200 mb-6">
+                Web Projects
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {web_projects.map((project) => (
+                    // hover will increase shadow and size of the card
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition-all duration-300 ">
+                        <h4 class="text-xl font-semibold text-gray-200 mb-2">{project.title}</h4>
+                        <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-lg mb-4" />
+                        <p class="text-gray-300 mb-4">{project.description}</p>
+                        <div class="flex space-x-2 flex-wrap">
+                            {project.tools.map((tool) => (
+                                <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm mb-2">
+                                    {tool}
+                                </span>
+                            ))}
+                        </div>
+                        <a href={project.link} class="text-blue-400 hover:underline mt-4 block">Source Code</a>
+                        {/* if there is status then add this with red color*/}
+                        {project.status && (
+                            <span class="text-red-500 mt-2 block">{project.status}</span>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        <!-- Other Projects -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-semibold text-gray-200 mb-6">
+                Other Projects
+            </h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                {other_projects.map((project) => (
+                    <div class="bg-gray-900 rounded-lg shadow-lg p-6 hover:shadow-2xl hover:scale-105 transition-all duration-300 ">
+                        <h4 class="text-xl font-semibold text-gray-200 mb-2">{project.title}</h4>
+                        <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-lg mb-4" />
+                        <p class="text-gray-300 mb-4">{project.description}</p>
+                        <div class="flex space-x-2 flex-wrap">
+                            {project.tools.map((tool) => (
+                                <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm mb-2">
+                                    {tool}
+                                </span>
+                            ))}
+                        </div>
+                        <a href={project.link} class="text-blue-400 hover:underline mt-4 block">Source Code</a>
+                        {/* if there is status then add this with red color*/}
+                        {project.status && (
+                            <span class="text-red-500 mt-2 block">{project.status}</span>
+                        )}
+                        
+                    </div>
+                ))}
+            </div>
+        </div>
         <!-- Machine Learning Projects -->
         <div class="mb-12">
             <h3 class="text-2xl font-semibold text-gray-200 mb-6">
                 Machine Learning Projects
             </h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {ml_projects.map((project) => (
                     <div class="bg-gray-900 rounded-lg shadow-lg p-6">
                         <h4 class="text-xl font-semibold text-gray-200 mb-2">{project.title}</h4>
@@ -81,55 +150,9 @@ const other_projects = [
                         <a href={project.link} class="text-blue-400 hover:underline mt-4 block">View Project</a>
                     </div>
                 ))}
-            </div>
-        </div>
+            </div> -->
 
-        <!-- Web Projects -->
-        <div class="mb-12">
-            <h3 class="text-2xl font-semibold text-gray-200 mb-6">
-                Web Projects
-            </h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {web_projects.map((project) => (
-                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
-                        <h4 class="text-xl font-semibold text-gray-200 mb-2">{project.title}</h4>
-                        <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-lg mb-4" />
-                        <p class="text-gray-300 mb-4">{project.description}</p>
-                        <div class="flex space-x-2 flex-wrap">
-                            {project.tools.map((tool) => (
-                                <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm mb-2">
-                                    {tool}
-                                </span>
-                            ))}
-                        </div>
-                        <a href={project.link} class="text-blue-400 hover:underline mt-4 block">View Project</a>
-                    </div>
-                ))}
-            </div>
-        </div>
-
-        <!-- Other Projects -->
-        <div>
-            <h3 class="text-2xl font-semibold text-gray-200 mb-6">
-                Other Projects
-            </h3>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                {other_projects.map((project) => (
-                    <div class="bg-gray-900 rounded-lg shadow-lg p-6">
-                        <h4 class="text-xl font-semibold text-gray-200 mb-2">{project.title}</h4>
-                        <img src={project.image} alt={project.title} class="w-full h-48 object-cover rounded-lg mb-4" />
-                        <p class="text-gray-300 mb-4">{project.description}</p>
-                        <div class="flex space-x-2 flex-wrap">
-                            {project.tools.map((tool) => (
-                                <span class="bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-sm mb-2">
-                                    {tool}
-                                </span>
-                            ))}
-                        </div>
-                        <a href={project.link} class="text-blue-400 hover:underline mt-4 block">View Project</a>
-                    </div>
-                ))}
-            </div>
+            <h2>Will be updated soon ....</h2>
         </div>
     </div>
 </section>
