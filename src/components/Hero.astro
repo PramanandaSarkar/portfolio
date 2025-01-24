@@ -97,7 +97,7 @@ layout: "../layouts/BaseLayout.astro"
 
 <!-- Dark/Light Mode Script -->
 <script>
-  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggle = document.getElementById('theme-toggle')!;
   const html = document.documentElement;
 
   themeToggle.addEventListener('click', () => {
